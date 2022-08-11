@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const controllers = require('./controllers')
+const controllers = require('../controllers/blogControllers')
 
 
 router.get('/', controllers.getPosts)

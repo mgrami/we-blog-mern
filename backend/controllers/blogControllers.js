@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler')
-const Post = require('./models')
+const { Post } = require('../models/blogModels')
 
 
 const getPosts = asyncHandler(async (req, res) => {

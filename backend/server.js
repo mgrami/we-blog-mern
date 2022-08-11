@@ -13,7 +13,8 @@ const app = express()
 app.use(express.json()) // raw json
 app.use(express.urlencoded({ extended: false })) // x-www-form-urlencoded
 
-app.use('/api/v1/blog', require('./blog/routes'))
+app.use('/api/v1/blog', require('./routes/blogRoutes'))
+app.use('/api/v1/users', require('./routes/userRoutes'))
 
 app.use(errorHandler)
 
