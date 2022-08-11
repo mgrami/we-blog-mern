@@ -29,14 +29,13 @@
   },  
   "husky": {
     "hooks":{
-      "pre-commit": "lint-staged",
-      "pre-push":   "CI=true npm test",
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,json,css,md,html}": [
       "prettier --single-quote --write",
-      "git add",
+      "git add"
     ]
   }
 }
