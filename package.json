@@ -26,16 +26,17 @@
     "lint-staged": "^13.0.3",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1"
-  },  
+  },
   "husky": {
     "hooks":{
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push":   "CI=true npm test",
     }
   },
   "lint-staged": {
-    "*.{js,json,css,md,html}": [
+    "./backend/*.{js,json,css,md,html}": [
       "prettier --single-quote --write",
-      "git add"
+      "git add",
     ]
   }
 }

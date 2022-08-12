@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require("express")
 const colors = require('colors')
 const dotenv = require('dotenv').config()
 const { errorHandler } = require('./middlewares/errorMiddleware')
