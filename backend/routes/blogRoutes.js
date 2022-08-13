@@ -1,17 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const controllers = require('../controllers/blogControllers')
+const { protect, addUserToRequest } = require('../middlewares/authMiddlewares')
 
 
-router.get('/', controllers.getPosts)
+router.get('/', addUserToRequest, controllers.getPosts)
 
-router.post('/', controllers.createPost)
+router.get('/:id', addUserToRequest, controllers.getPost)
 
-router.get('/:id', controllers.getPost)
+router.post('/', protect, controllers.createPost)
 
-router.put('/:id', controllers.updatePost)
+router.put('/:id', protect, controllers.updatePost)
 
-router.delete('/:id', controllers.deletePost)
+router.delete('/:id', protect, controllers.deletePost)
 
 
 module.exports = router
